@@ -1,0 +1,85 @@
+.profile {
+  padding: 40px 0;
+  display: grid;
+  grid-template-columns: 190px 1fr auto;
+  gap: 20px;
+  align-items: center;
+}
+.profile__avatar {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profile__info {
+  display: flex;
+  flex-direction: column;
+  max-width: 505px;
+  flex-grow: 1;
+}
+.profile__name-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.profile__name {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.profile__description {
+  font-size: 18px;
+  line-height: 1.2;
+  margin: 8px 0 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.profile__edit-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.profile__edit-button::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url("../images/pencil.svg") center no-repeat;
+  background-size: contain;
+}
+.profile__add-button {
+  min-width: 165px;
+  height: 52px;
+  background-color: #212121;
+  color: #fcf5e5;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0 32px;
+  cursor: pointer;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.profile__edit-button:hover {
+  opacity: 0.6;
+}
+.profile__add-button:hover {
+  opacity: 0.8;
+}

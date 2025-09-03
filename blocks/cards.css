@@ -1,6 +1,8 @@
 .cards {
-  padding: 47px 0 67px;
+  padding: 34px 0 40px;
+  border-bottom: 1px solid #545454;
 }
+
 .cards__list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(413px, 1fr));

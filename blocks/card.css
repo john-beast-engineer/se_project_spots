@@ -10,12 +10,13 @@
   height: 413px;
   object-fit: cover;
   display: block;
+  border-radius: 10px;
 }
 .card__footer {
+  padding: 20px;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 20px;
-  padding: 20px;
   align-items: center;
   background-color: #fcf5e5;
 }

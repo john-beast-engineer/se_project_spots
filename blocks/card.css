@@ -1,9 +1,5 @@
 .card {
-  display: grid;
-  grid-template-rows: 413px auto;
-  background-color: #fff;
-  border-radius: 10px;
-  overflow: hidden;
+  max-width: 100%;
 }
 .card__image {
   width: 100%;
@@ -13,7 +9,7 @@
   border-radius: 10px;
 }
 .card__footer {
-  padding: 20px;
+  padding: 12px 0;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 20px;
@@ -48,13 +44,7 @@
 .card:hover {
   cursor: pointer;
 }
-@media screen and (max-width: 1100px) {
-  .card__image {
-    height: 300px;
-  }
-}
-
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 672px) {
   .card__image {
     height: 282px;
   }

@@ -12,8 +12,13 @@
   margin: 0;
   justify-content: center;
 }
-@media screen and (max-width: 672px) {
+@media screen and (max-width: 630px) {
+  .cards {
+    padding: 34px 16px 40px 16px;
+  }
+
   .cards__list {
     grid-template-columns: 1fr;
+    padding: 0;
   }
 }

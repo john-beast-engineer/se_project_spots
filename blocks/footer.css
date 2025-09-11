@@ -3,12 +3,7 @@
   text-align: center;
 }
 .footer__copyright {
-  color: #545454;
-  font-size: 18px;
+  opacity: 0.7;
+  font-size: 16px;
   margin: 0;
-}
-@media screen and (max-width: 672px) {
-  .footer__copyright {
-    font-size: 14px;
-  }
 }

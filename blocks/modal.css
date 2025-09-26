@@ -9,6 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 
 .modal_is-opened {
@@ -87,4 +88,23 @@
   border-radius: 8px;
   font-size: 18px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .modal__container {
+    padding: 24px 20px;
+  }
+
+  .modal__close-button {
+    top: 24px;
+    right: 20px;
+  }
+
+  .modal__title {
+    font-size: 20px;
+  }
+
+  .modal__submit-button {
+    max-width: none;
+  }
 }

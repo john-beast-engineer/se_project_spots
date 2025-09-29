@@ -94,7 +94,12 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
+.modal__submit-button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
   .modal__container {
     padding: 24px 20px;
   }

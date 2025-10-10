@@ -28,6 +28,10 @@ const initialCards = [
     name: "Mountain house",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
+  {
+    name: "Golden Gate Bridge",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+  },
 ];
 
 // Edit Profile Modal Elements
@@ -52,6 +56,12 @@ const newPostForm = newPostModal.querySelector(".modal__form");
 const cardImageInput = newPostModal.querySelector("#card-image-input");
 const cardCaptionInput = newPostModal.querySelector("#card-caption-input");
 
+// Preview Modal Elements
+const previewModal = document.querySelector("#preview-modal");
+const previewImage = previewModal.querySelector(".modal__image");
+const previewCaption = previewModal.querySelector(".modal__caption");
+const previewCloseBtn = previewModal.querySelector(".modal__close-button");
+
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
 }
@@ -60,7 +70,52 @@ function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 }
 
+// Preview Modal Event Listener
+previewCloseBtn.addEventListener("click", () => {
+  closeModal(previewModal);
+});
+
+// Card Template and Container
+const cardTemplate = document.querySelector("#card-template");
+const cardsListElement = document.querySelector(".cards__list");
+
+// cloned card elements select
+const cardImageElement = cardElement.querySelector(".card__image");
+const cardTitleElement = cardElement.querySelector(".card__title");
+const cardLikeButton = cardElement.querySelector(".card__like-button");
+const cardDeleteButton = cardElement.querySelector(".card__delete-button");
+
+// Set card data
+cardImageElement.src = data.link;
+cardImageElement.alt = data.name;
+cardTitleElement.textContent = data.name;
+
+// like button functionality
+cardLikeButton.addEventListener("click", () => {
+  cardLikeButton.classList.toggle("card__like-button_liked");
+});
+
+// delete button functionality
+cardDeleteButton.addEventListener("click", () => {
+  cardElement.remove();
+});
+
+// Add image click for preview modal functionality
+cardImageElement.addEventListener("click", () => {
+  previewImage.src = data.link;
+  previewImage.alt = data.name;
+  previewCaption.textContent = data.name;
+  openModal(previewModal);
+});
+
+return cardElement;
+
 // Function Definitions
+function getCardElement(data) {
+  const cardElement = cardTemplate.content
+    .querySelector(".card")
+    .cloneNode(true);
+}
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   profileNameElement.textContent = editProfileNameInput.value;
@@ -70,9 +125,14 @@ function handleEditProfileSubmit(evt) {
 
 function handleNewPostSubmit(evt) {
   evt.preventDefault();
-  console.log("Image URL:", cardImageInput.value);
-  console.log("Caption:", cardCaptionInput.value);
+  const newCardData = {
+    name: cardCaptionInput.value,
+    link: cardImageInput.value,
+  };
+  const cardElement = getCardElement(newCardData);
+  cardsListElement.prepend(cardElement);
   closeModal(newPostModal);
+  evt.target.reset();
 }
 
 // Edit Profile Modal Event Listeners
@@ -100,6 +160,7 @@ newPostCloseBtn.addEventListener("click", function () {
 newPostForm.addEventListener("submit", handleNewPostSubmit);
 
 // Initial Cards Rendering
-initialCards.forEach(function (item) {
-  console.log(item.name);
+initialCards.forEach((cardData) => {
+  const cardElement = getCardElement(cardData);
+  cardsListElement.append(cardElement);
 });

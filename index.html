@@ -29,118 +29,33 @@
         </section>
 
         <section class="cards">
-          <ul class="cards__list">
-            <li>
-              <article class="card">
-                <img
-                  src="./images/val-thorens.jpg"
-                  alt="Val Thorens"
-                  class="card__image"
-                />
-                <div class="card__footer">
-                  <h2 class="card__title">Val Thorens</h2>
-                  <button
-                    class="card__like-button"
-                    type="button"
-                    aria-label="Like"
-                  ></button>
-                </div>
-              </article>
-            </li>
-            <li>
-              <article class="card">
-                <img
-                  src="./images/restaurant-terrace.jpg"
-                  alt="Restaurant Terrace"
-                  class="card__image"
-                />
-                <div class="card__footer">
-                  <h2 class="card__title">Restaurant Terrace</h2>
-                  <button
-                    class="card__like-button"
-                    type="button"
-                    aria-label="Like"
-                  ></button>
-                </div>
-              </article>
-            </li>
-            <li>
-              <article class="card">
-                <img
-                  src="./images/an-outdoor-cafe.jpg"
-                  alt="An Outdoor Cafe"
-                  class="card__image"
-                />
-                <div class="card__footer">
-                  <h2 class="card__title">An Outdoor Cafe</h2>
-                  <button
-                    class="card__like-button"
-                    type="button"
-                    aria-label="Like"
-                  ></button>
-                </div>
-              </article>
-            </li>
-            <li>
-              <article class="card">
-                <img
-                  src="./images/long-bridge.jpg"
-                  alt="A very long bridge, over the forest..."
-                  class="card__image"
-                />
-                <div class="card__footer">
-                  <h2 class="card__title">
-                    A very long bridge, over the forest...
-                  </h2>
-                  <button
-                    class="card__like-button"
-                    type="button"
-                    aria-label="Like"
-                  ></button>
-                </div>
-              </article>
-            </li>
-            <li>
-              <article class="card">
-                <img
-                  src="./images/tunnel.jpg"
-                  alt="Tunnel with morning light"
-                  class="card__image"
-                />
-                <div class="card__footer">
-                  <h2 class="card__title">Tunnel with morning light</h2>
-                  <button
-                    class="card__like-button"
-                    type="button"
-                    aria-label="Like"
-                  ></button>
-                </div>
-              </article>
-            </li>
-            <li>
-              <article class="card">
-                <img
-                  src="./images/mountain-house.jpg"
-                  alt="Mountain house"
-                  class="card__image"
-                />
-                <div class="card__footer">
-                  <h2 class="card__title">Mountain house</h2>
-                  <button
-                    class="card__like-button"
-                    type="button"
-                    aria-label="Like"
-                  ></button>
-                </div>
-              </article>
-            </li>
-          </ul>
+          <ul class="cards__list"></ul>
         </section>
       </main>
 
       <footer class="footer">
         <p class="footer__copyright">© 2025 Spots</p>
       </footer>
+      <template id="card-template">
+        <li>
+          <article class="card">
+            <img class="card__image" src="#" alt="" />
+            <button
+              type="button"
+              class="card__delete-button"
+              aria-label="Delete"
+            ></button>
+            <div class="card__footer">
+              <h2 class="card__title"></h2>
+              <button
+                class="card__like-button"
+                type="button"
+                aria-label="Like"
+              ></button>
+            </div>
+          </article>
+        </li>
+      </template>
       <div class="modal" id="edit-profile-modal">
         <!-- Add modal_is-opened to see it -->
         <div class="modal__container">
@@ -202,6 +117,17 @@
             </label>
             <button type="submit" class="modal__submit-button">Save</button>
           </form>
+        </div>
+      </div>
+      <div class="modal" id="preview-modal">
+        <div class="modal__container modal__container_type_preview">
+          <button
+            type="button"
+            class="modal__close-button"
+            aria-label="Close modal"
+          ></button>
+          <img class="modal__image" src="#" alt="" />
+          <p class="modal__caption"></p>
         </div>
       </div>
     </div>

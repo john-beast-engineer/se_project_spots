@@ -79,43 +79,43 @@ previewCloseBtn.addEventListener("click", () => {
 const cardTemplate = document.querySelector("#card-template");
 const cardsListElement = document.querySelector(".cards__list");
 
-// cloned card elements select
-const cardImageElement = cardElement.querySelector(".card__image");
-const cardTitleElement = cardElement.querySelector(".card__title");
-const cardLikeButton = cardElement.querySelector(".card__like-button");
-const cardDeleteButton = cardElement.querySelector(".card__delete-button");
-
-// Set card data
-cardImageElement.src = data.link;
-cardImageElement.alt = data.name;
-cardTitleElement.textContent = data.name;
-
-// like button functionality
-cardLikeButton.addEventListener("click", () => {
-  cardLikeButton.classList.toggle("card__like-button_liked");
-});
-
-// delete button functionality
-cardDeleteButton.addEventListener("click", () => {
-  cardElement.remove();
-});
-
-// Add image click for preview modal functionality
-cardImageElement.addEventListener("click", () => {
-  previewImage.src = data.link;
-  previewImage.alt = data.name;
-  previewCaption.textContent = data.name;
-  openModal(previewModal);
-});
-
-return cardElement;
-
-// Function Definitions
 function getCardElement(data) {
   const cardElement = cardTemplate.content
     .querySelector(".card")
     .cloneNode(true);
+
+  // cloned card elements select
+  const cardImageElement = cardElement.querySelector(".card__image");
+  const cardTitleElement = cardElement.querySelector(".card__title");
+  const cardLikeButton = cardElement.querySelector(".card__like-button");
+  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
+
+  // Set card data
+  cardImageElement.src = data.link;
+  cardImageElement.alt = data.name;
+  cardTitleElement.textContent = data.name;
+
+  // like button functionality
+  cardLikeButton.addEventListener("click", () => {
+    cardLikeButton.classList.toggle("card__like-button_liked");
+  });
+
+  // delete button functionality
+  cardDeleteButton.addEventListener("click", () => {
+    cardElement.remove();
+  });
+
+  // Add image click for preview modal functionality
+  cardImageElement.addEventListener("click", () => {
+    previewImage.src = data.link;
+    previewImage.alt = data.name;
+    previewCaption.textContent = data.name;
+    openModal(previewModal);
+  });
+
+  return cardElement;
 }
+// Function Definitions
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   profileNameElement.textContent = editProfileNameInput.value;

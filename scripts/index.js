@@ -80,9 +80,7 @@ const cardTemplate = document.querySelector("#card-template");
 const cardsListElement = document.querySelector(".cards__list");
 
 function getCardElement(data) {
-  const cardElement = cardTemplate.content
-    .querySelector(".card")
-    .cloneNode(true);
+  const cardElement = cardTemplate.content.cloneNode(true).children[0];
 
   // cloned card elements select
   const cardImageElement = cardElement.querySelector(".card__image");
@@ -150,6 +148,7 @@ editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
 // New Post Modal Event Listeners
 newPostButton.addEventListener("click", function () {
+  newPostForm.reset();
   openModal(newPostModal);
 });
 

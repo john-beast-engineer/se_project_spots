@@ -36,26 +36,31 @@
       <footer class="footer">
         <p class="footer__copyright">© 2025 Spots</p>
       </footer>
-      <template id="card-template">
-        <li>
-          <article class="card">
-            <img class="card__image" src="#" alt="" />
-            <button
-              type="button"
-              class="card__delete-button"
-              aria-label="Delete"
-            ></button>
-            <div class="card__footer">
-              <h2 class="card__title"></h2>
-              <button
-                class="card__like-button"
-                type="button"
-                aria-label="Like"
-              ></button>
-            </div>
-          </article>
-        </li>
-      </template>
+      <section class="cards">
+        <ul class="cards__list">
+          <template id="card-template">
+            <li class="card">
+              <!-- This seems redundant, I have "card" on <article> -->
+              <article class="card">
+                <img class="card__image" src="#" alt="" />
+                <button
+                  type="button"
+                  class="card__delete-button"
+                  aria-label="Delete"
+                ></button>
+                <div class="card__footer">
+                  <h2 class="card__title"></h2>
+                  <button
+                    class="card__like-button"
+                    type="button"
+                    aria-label="Like"
+                  ></button>
+                </div>
+              </article>
+            </li>
+          </template>
+        </ul>
+      </section>
       <div class="modal" id="edit-profile-modal">
         <!-- Add modal_is-opened to see it -->
         <div class="modal__container">

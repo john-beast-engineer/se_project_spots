@@ -2,6 +2,9 @@ const profileNameElement = document.querySelector(".profile__name");
 const profileDescriptionElement = document.querySelector(
   ".profile__description"
 );
+const newPostSubmitButton = document.querySelector(
+  "#new-post-modal .modal__button"
+);
 
 const initialCards = [
   {
@@ -64,10 +67,12 @@ const previewCloseBtn = previewModal.querySelector(".modal__close-button");
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", handleEscapeKey);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keydown", handleEscapeKey);
 }
 
 // Preview Modal Event Listener
@@ -129,14 +134,33 @@ function handleNewPostSubmit(evt) {
   };
   const cardElement = getCardElement(newCardData);
   cardsListElement.prepend(cardElement);
-  closeModal(newPostModal);
   evt.target.reset();
+  disableButton(newPostSubmitButton, settings);
+  closeModal(newPostModal);
+}
+
+// Handle Escape key press
+function handleEscapeKey(evt) {
+  if (evt.key === "Escape") {
+    const openModal = document.querySelector(".modal_is-opened");
+    if (openModal) {
+      closeModal(openModal);
+    }
+  }
 }
 
 // Edit Profile Modal Event Listeners
-editProfileButton.addEventListener("click", function () {
+editProfileButton.addEventListener("click", () => {
   editProfileNameInput.value = profileNameElement.textContent;
   editProfileDescriptionInput.value = profileDescriptionElement.textContent;
+
+  // Reset validation
+  const editForm = editProfileModal.querySelector(".modal__form");
+  const inputList = Array.from(
+    editForm.querySelectorAll(settings.inputSelector)
+  );
+  resetValidation(editForm, inputList, settings);
+
   openModal(editProfileModal);
 });
 
@@ -157,6 +181,16 @@ newPostCloseBtn.addEventListener("click", function () {
 });
 
 newPostForm.addEventListener("submit", handleNewPostSubmit);
+
+const modals = document.querySelectorAll(".modal");
+
+modals.forEach((modal) => {
+  modal.addEventListener("click", (evt) => {
+    if (evt.target === modal) {
+      closeModal(modal);
+    }
+  });
+});
 
 // Initial Cards Rendering
 initialCards.forEach((cardData) => {

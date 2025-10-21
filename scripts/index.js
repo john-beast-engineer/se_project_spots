@@ -129,8 +129,8 @@ function handleEditProfileSubmit(evt) {
 function handleNewPostSubmit(evt) {
   evt.preventDefault();
   const newCardData = {
-    name: cardCaptionInput.value,
-    link: cardImageInput.value,
+    name: cardImageInput.value,
+    link: cardCaptionInput.value,
   };
   const cardElement = getCardElement(newCardData);
   cardsListElement.prepend(cardElement);
@@ -142,9 +142,9 @@ function handleNewPostSubmit(evt) {
 // Handle Escape key press
 function handleEscapeKey(evt) {
   if (evt.key === "Escape") {
-    const openModal = document.querySelector(".modal_is-opened");
-    if (openModal) {
-      closeModal(openModal);
+    const openedModal = document.querySelector(".modal_is-opened");
+    if (openedModal) {
+      closeModal(openedModal);
     }
   }
 }
@@ -172,7 +172,6 @@ editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
 // New Post Modal Event Listeners
 newPostButton.addEventListener("click", function () {
-  newPostForm.reset();
   openModal(newPostModal);
 });
 

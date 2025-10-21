@@ -84,7 +84,7 @@
   color: #2121214d;
 }
 
-.modal__submit-button {
+.modal__button {
   max-width: 156px;
   width: 100%;
   padding: 18px 0;
@@ -96,7 +96,7 @@
   cursor: pointer;
 }
 
-.modal__submit-button:hover {
+.modal__button:hover {
   opacity: 0.8;
   cursor: pointer;
 }

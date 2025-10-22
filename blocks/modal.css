@@ -121,12 +121,14 @@
 }
 
 .modal__caption {
+  border-radius: 8px;
   margin: 10px 0 0;
-  font-size: 12px;
-  line-height: 1.21;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24;
   color: #fff;
-  background-color: transparent;
-  padding: 0;
+  background-color: #212121;
+  padding: 4px 8px;
 }
 
 .modal__container_type_preview .modal__close-button {
@@ -134,6 +136,10 @@
   top: -40px;
   right: -40px;
   background-image: url("../images/close-icon-white.svg");
+}
+
+.modal__close-button_type_preview {
+  /* so that the close icon could have another color or background image, position and so on */
 }
 
 /* Error message */
@@ -160,10 +166,9 @@
 
 /* Disabled button styling */
 .modal__button_disabled {
-  background-color: transparent;
   color: #000000;
   border: 1px solid #000000;
-  opacity: 0.2;
+  opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
 }

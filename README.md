@@ -31,3 +31,7 @@ This webpage is deployed to GitHub pages
 - [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
 
 - Video overview of project here: https://youtu.be/hn-wtRtVQGU
+
+## Project Pitch Video
+
+check out https://www.loom.com/share/8eade87e1ffd4cd8a94e175bc87dc9c8?sid=97904749-869a-48a2-a606-f31c828df450, where I describe my project and some challenges I faced while building it.

@@ -125,21 +125,17 @@
   margin: 10px 0 0;
   font-size: 20px;
   font-weight: 500;
-  line-height: 24;
+  line-height: 24px;
   color: #fff;
   background-color: #212121;
   padding: 4px 8px;
 }
 
-.modal__container_type_preview .modal__close-button {
+.modal__close-button_type_preview {
   position: absolute;
   top: -40px;
   right: -40px;
   background-image: url("../images/close-icon-white.svg");
-}
-
-.modal__close-button_type_preview {
-  /* so that the close icon could have another color or background image, position and so on */
 }
 
 /* Error message */

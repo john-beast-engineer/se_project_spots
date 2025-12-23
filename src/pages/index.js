@@ -1,3 +1,10 @@
+import {
+  settings,
+  enableValidation,
+  resetValidation,
+  disableButton,
+} from "../scripts/validation.js";
+import "./index.css";
 const profileNameElement = document.querySelector(".profile__name");
 const profileDescriptionElement = document.querySelector(
   ".profile__description"
@@ -196,3 +203,5 @@ initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
   cardsListElement.append(cardElement);
 });
+
+enableValidation(settings);

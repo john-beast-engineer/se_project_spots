@@ -36,7 +36,7 @@
 .profile__description {
   font-size: 16px;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.2;
   margin: 12px 0 0;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -87,6 +87,35 @@
   margin-left: auto;
   flex-shrink: 0;
 }
+.profile__avatar-container {
+  position: relative;
+}
+
+.profile__avatar-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 10px;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.profile__avatar-container:hover .profile__avatar-button {
+  visibility: visible;
+}
+
+.profile__pencil-icon {
+  width: 20px;
+  height: 20px;
+}
+
 .profile__edit-button:hover {
   opacity: 1;
 }
@@ -105,6 +134,10 @@
   .profile__avatar {
     width: 80px;
     height: 80px;
+  }
+
+  .profile__avatar-button {
+    visibility: visible;
   }
 
   .profile__info {

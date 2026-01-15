@@ -60,6 +60,10 @@ Spots is a responsive photo-sharing web application where users can create profi
 
 **Sprint 6 Project Pitch:** Check out [this video](https://www.loom.com/share/8eade87e1ffd4cd8a94e175bc87dc9c8?sid=97904749-869a-48a2-a606-f31c828df450), where I describe the form validation features and challenges I faced while building them.
 
+**Sprint 9: API Integration**
+
+Check out this video: https://www.loom.com/share/b606dacbbd3d4f9a93a86ae37aedb2ec
+
 ## Project Structure
 
 ```

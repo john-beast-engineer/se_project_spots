@@ -169,6 +169,67 @@
   pointer-events: none;
 }
 
+/* Delete Modal Specific Styles */
+.modal__container_type_delete {
+  text-align: center;
+}
+
+.modal__container_type_delete .modal__title {
+  margin-bottom: 20px;
+}
+
+.modal__container_type_delete .modal__form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 8px;
+}
+
+.modal__close-button_type_delete {
+  top: -10px;
+  right: -40px;
+  background-image: url("../images/close-icon-white.svg");
+}
+
+/* Delete Button - Red */
+.modal__button.modal__button_type_delete {
+  width: 156px;
+  height: 52px;
+  padding: 18px 32px;
+  background-color: #ff6565;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.modal__button.modal__button_type_delete:hover {
+  background-color: #ff3333;
+  opacity: 1;
+}
+
+/* Cancel Button - White with border */
+.modal__button.modal__button_type_cancel {
+  width: 156px;
+  height: 52px;
+  padding: 18px 32px;
+  background-color: #fff;
+  color: #212121;
+  border: 1px solid #212121;
+  border-radius: 8px;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.modal__button.modal__button_type_cancel:hover {
+  opacity: 0.8;
+}
+
 @media screen and (max-width: 480px) {
   .modal__container {
     padding: 22px 12px 12px;

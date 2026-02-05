@@ -5,12 +5,53 @@
   border-bottom: 1px solid #21212166;
 }
 
+.profile__avatar-container {
+  position: relative;
+}
+
 .profile__avatar {
   width: 190px;
   height: 190px;
   border-radius: 8px;
   object-fit: cover;
   flex-shrink: 0;
+}
+
+.profile__avatar-button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: Poppins, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: #fcf5e5;
+  opacity: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.profile__avatar-button::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  background: url("../images/mopencil4.svg") center no-repeat;
+  background-size: contain;
+}
+
+.profile__avatar-container:hover .profile__avatar-button {
+  opacity: 1;
 }
 
 .profile__info {
@@ -36,7 +77,7 @@
 .profile__description {
   font-size: 16px;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.2;
   margin: 12px 0 0;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -63,6 +104,7 @@
   gap: 8px;
   margin-top: auto;
 }
+
 .profile__edit-button::before {
   content: "";
   display: inline-block;
@@ -71,6 +113,11 @@
   background: url("../images/pencil.svg") center no-repeat;
   background-size: contain;
 }
+
+.profile__edit-button:hover {
+  opacity: 1;
+}
+
 .profile__add-button {
   min-width: 149px;
   height: 52px;
@@ -87,12 +134,11 @@
   margin-left: auto;
   flex-shrink: 0;
 }
-.profile__edit-button:hover {
-  opacity: 1;
-}
+
 .profile__add-button:hover {
   opacity: 0.8;
 }
+
 /* Mobile View */
 @media screen and (max-width: 630px) {
   .profile {
@@ -105,6 +151,20 @@
   .profile__avatar {
     width: 80px;
     height: 80px;
+  }
+
+  .profile__avatar-button {
+    bottom: 5px;
+    left: auto;
+    right: 5px;
+    transform: none;
+    font-size: 0;
+    opacity: 1;
+  }
+
+  .profile__avatar-button::before {
+    width: 16px;
+    height: 16px;
   }
 
   .profile__info {
